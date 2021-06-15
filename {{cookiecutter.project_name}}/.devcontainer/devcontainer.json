@@ -25,7 +25,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "docker --version",
+	"postCreateCommand": "sed -i 's/codespaces/robbyrussell/g' ~/.zshrc && sed -i 's/PROMPT=/PROMT+=/g' ~/.oh-my-zsh/themes/robbyrussell.zsh-theme && sed -i '1i PROMPT=\"(Docker)\"'  ~/.oh-my-zsh/themes/robbyrussell.zsh-theme" ,
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	//"remoteUser": "dev"
