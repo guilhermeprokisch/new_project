@@ -22,12 +22,12 @@
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [6080, 5901],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sed -i 's/codespaces/robbyrussell/g' ~/.zshrc && sed -i 's/PROMPT=/PROMT+=/g' ~/.oh-my-zsh/themes/robbyrussell.zsh-theme && sed -i '1i PROMPT=\"(Docker)\"'  ~/.oh-my-zsh/themes/robbyrussell.zsh-theme" ,
+	"postCreateCommand": "pip install -r requirements.txt && sed -i 's/codespaces/robbyrussell/g' ~/.zshrc && sed -i 's/PROMPT=/PROMT+=/g' ~/.oh-my-zsh/themes/robbyrussell.zsh-theme && sed -i '1i PROMPT=\"(Docker)\"'  ~/.oh-my-zsh/themes/robbyrussell.zsh-theme && echo 'vnc(){sudo bash /usr/local/share/desktop-init.sh && echo 'noVnc localhost:6080 and vnc localhost:5901'} ' >> ~/.zshrc " ,
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	//"remoteUser": "dev"
+	"remoteUser": "dev"
 	
 }
